@@ -111,3 +111,11 @@
     }
   }
   
+  $breakpoint-tablet:768px;
+  @media (max-width: 768px) {
+    .logo-container { 
+    .img{
+      display: none; opacity: 0;
+    }
+  }   /* hide it elsewhere */
+  }
