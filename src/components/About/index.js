@@ -13,9 +13,7 @@ import {
   }from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const About=()=>{
-
-    
+const About=()=>{    
 return(
     <div className='container about-page'>
          <div className="text-zone">
