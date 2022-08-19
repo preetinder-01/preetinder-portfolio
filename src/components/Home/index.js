@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
+// import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import LogoBody from '../../assets/images/logo-b.png'
 // import Logo from './Logo'

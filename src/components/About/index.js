@@ -15,7 +15,7 @@ import {
     
   }from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Loader from 'react-loaders';
+// import Loader from 'react-loaders';  
 
 
 
