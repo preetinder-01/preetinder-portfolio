@@ -35,6 +35,26 @@
     .face1 {
       transform: translateZ(100px);
       color: #dd0031;
+      .git{ opacity: 0.2;
+        color: black;
+        
+      }
+    }
+    .git{ opacity: 0.2;
+      color: black;
+      
+    }
+    .html{ opacity: 0.2;
+      color: black;
+      font-size: 75px;
+    }
+    .react{ opacity: 0.2;
+      color: black;
+      font-size: 60px;
+    }
+    .python{ opacity: 0.2;
+      color: black;
+      font-size: 48px;
     }
     .face2 {
       transform: rotateY(90deg) translateZ(100px);
@@ -79,3 +99,17 @@
       transform: rotateX(90deg);
     }
   }
+
+    
+@media screen and (max-width: 1200px) {
+  .page {
+    position: initial;
+  }
+  .about-page{
+    top: 0;
+    margin: auto;
+    margin-top: 0;
+    // bottom: 0;
+  }
+
+}

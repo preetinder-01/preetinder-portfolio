@@ -28,15 +28,16 @@ const Home = () => {
   ]
 
   useEffect(() => {
-    return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3500)
-  }, [])
+    const timer = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
       <div className="container home-page">
-        <div className="text-zone">
+        <div className="text-zone homepage">
           <h1>
             <span className={letterClass}>H</span>
             <span className={`${letterClass} _13`}>i,</span>    {/* _12` fro delay` */}
@@ -66,16 +67,14 @@ const Home = () => {
           </Link>
         </div>
         <div className="logo-container" >
-      <img
-        className="solid-logo"
-        // ref={solidLogoRef}
+      <img className="solid-logo"
         src={LogoBody}
         alt="JavaScript,  Developer"
       />
         </div>
       </div>
 
-      <Loader type="pacman" />
+      {/* <Loader type="pacman" /> */}
     </>
   )
 }
