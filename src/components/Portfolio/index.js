@@ -1,76 +1,91 @@
 import React, { useEffect, useState } from "react";
-import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
-import { getDocs, collection } from 'firebase/firestore';
-import { db } from '../../firebase';
+
+import Proj from '../../assets/images/logo4.png'
+
 
 const Portfolio = () => { 
-    const [letterClass, setLetterClass] = useState('text-animate');
-    const [portfolio, setPortfolio] = useState([]);
-
+    const [letterClass, setLetterClass] = useState('text-animate')
     useEffect(() => {
         const timer = setTimeout(() => {
-            setLetterClass('text-animate-hover');
+          setLetterClass('text-animate-hover');
         }, 3000);
-
-        return () => {
-            clearTimeout(timer);
-        }
-    });
-
-    useEffect(() => {
-        getPortfolio();
-    }, []);
-
-    const getPortfolio = async () => {
-        const querySnapshot = await getDocs(collection(db, 'portfolio'));
-        setPortfolio(querySnapshot.docs.map((doc) => doc.data()));
-    }
-
-    const renderPortfolio = (portfolio) => {
-        return (
-            <div className="images-container">
-                {
-                    portfolio.map((port, idx) => {
-                        return (
-                            <div className="image-box" key={idx}>
-                                <img 
-                                src={port.image}
-                                className="portfolio-image"
-                                alt="portfolio" />
-                                <div className="content">
-                                    <p className="title">{port.name}</p>
-                                    <h4 className="description">{port.description}</h4>
-                                    <button
-                                        className="btn"
-                                        onClick={() => window.open(port.url)}
-                                    >View</button>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        );
-    }
-
-
-    return (
+        return () => clearTimeout(timer);
+      }, []);
+    
+      return(
         <>
-            <div className="container portfolio-page">
-                <h1 className="page-title">
-                    <AnimatedLetters
-                        letterClass={letterClass}
-                        strArray={"Portfolio".split("")}
-                        idx={15}
-                    />
-                </h1>
-                <div>{renderPortfolio(portfolio)}</div>
-            </div>
-            <Loader type="pacman" />
+        <div className="container portfolio-page">
+            <div className="head">
+            
+            <h1>
+                <AnimatedLetters
+                letterClass={letterClass}
+                strArray={['P','r','o','j','e','c','t','s']}
+                idx={15}
+                />
+            </h1>
+            {/* <Loader type="pacman" /> */}
+          </div>
+        <div className=" portfolio-grid ">
+          
+              <div className="proj-card">
+                <img src={Proj} alt="" />
+                <h3>Project 1</h3>
+                <p></p>
+              </div>
+              <div className="proj-card">
+                <img src={Proj} alt="" />
+                <h3>Project 2</h3>
+                <p></p>
+              </div>
+              <div className="proj-card">
+                <img src={Proj} alt="" />
+                <h3>Project 2</h3>
+                <p></p>
+              </div>
+              <div className="proj-card">
+                <img src={Proj} alt="" />
+                <h3>Project 2</h3>
+                <p></p>
+              </div>
+              <div className="proj-card">
+                <img src={Proj} alt="" />
+                <h3>Project 5</h3>
+                <p></p>
+              </div>
+              <div className="proj-card">
+                <img src={Proj} alt="" />
+                <h3>Project 6</h3>
+                <p></p>
+              </div>
+              
+          
+        </div>
+        </div>
+        
         </>
-    );
+    )
 }
 
 export default Portfolio;
+
+
+// function AutoLayoutExample() {
+//   return (
+//     <Container>
+//       <Row>
+//         <Col>1 of 2</Col>
+//         <Col>2 of 2</Col>
+//       </Row>
+//       <Row>
+//         <Col>1 of 3</Col>
+//         <Col>2 of 3</Col>
+//         <Col>3 of 3</Col>
+//       </Row>
+//     </Container>
+//   );
+// }
+
+// export default AutoLayoutExample;
