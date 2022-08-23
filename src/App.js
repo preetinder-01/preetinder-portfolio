@@ -6,13 +6,10 @@ import Layout from './components/Layout'
 import Portfolio from './components/Portfolio'
 // import Dashboard from './components/Dashboard'
 import './App.scss'
-import {useNavigate} from 'react-router'
+// import {useNavigate} from 'react-router'
 
 function App() {
-  const history = useNavigate();
-  const refreshPage = () => {
-    history(0);
-}
+  
   return (
     <>
       <Routes>
