@@ -10,9 +10,7 @@ import {useNavigate} from 'react-router'
 
 function App() {
   const history = useNavigate();
-  const refreshPage = () => {
-    history(0);
-}
+  history(0)
   return (
     <>
       <Routes>
