@@ -36,6 +36,10 @@ margin-top: 7%;
         margin: 10px;
         &:hover{
             transform: scale(1.1);
+            
         }
+    }
+    .fa-3x:hover{
+        transform: scale(1.2);
     }
 }
