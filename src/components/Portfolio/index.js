@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
-import Proj from '../../assets/images/logo4.png'
+import Proj from '../../assets/images/logo-b.png'
 
 
 
