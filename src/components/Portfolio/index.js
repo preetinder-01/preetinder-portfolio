@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
-import Proj from '../../assets/images/logo3.png'
+import Proj from '../../assets/images/logo4.png'
 
 
 
@@ -14,7 +14,7 @@ const Portfolio = () => {
         return () => clearTimeout(timer);
       }, []);
     
-      const [isHovering, setIsHovering] = useState(false);
+      var [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -23,6 +23,7 @@ const Portfolio = () => {
   const handleMouseOut = () => {
     setIsHovering(false);
   };
+              
       return(
         <>
         <div className="container portfolio-page">
@@ -35,7 +36,7 @@ const Portfolio = () => {
                 idx={15}
                 />
             </h1>
-            {/* <Loader type="pacman" /> */}
+            
           </div>
         <div className=" portfolio-grid ">
           
@@ -79,7 +80,16 @@ const Portfolio = () => {
                 }
               </div>
               </a>
-              
+
+              <a href="https://github.com/preetinder-01/steganography_implement" target="_blank" rel="noopener noreferrer">
+              <div className="proj-card" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
+                <img src={Proj} alt="img not found" />
+                <h3> Steganography Implementation    </h3>
+                {isHovering && 
+                <p className="proj-desc" >While studying about steganography , implemented its logic using python.</p>
+                }
+              </div>
+              </a>
               
               
               
@@ -92,22 +102,3 @@ const Portfolio = () => {
 }
 
 export default Portfolio;
-
-
-// function AutoLayoutExample() {
-//   return (
-//     <Container>
-//       <Row>
-//         <Col>1 of 2</Col>
-//         <Col>2 of 2</Col>
-//       </Row>
-//       <Row>
-//         <Col>1 of 3</Col>
-//         <Col>2 of 3</Col>
-//         <Col>3 of 3</Col>
-//       </Row>
-//     </Container>
-//   );
-// }
-
-// export default AutoLayoutExample;
