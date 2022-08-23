@@ -8,12 +8,22 @@ import Portfolio from './components/Portfolio'
 import './App.scss'
 // import {useNavigate} from 'react-router'
 
+window.addEventListener("pageshow", (event) => {
+  const historyTraversal =
+    event.persisted ||
+    (typeof window.performance != "undefined" &&
+      window.performance.navigation.type === 2);
+
+  if (historyTraversal) {
+    window.location.reload();
+  }
+});
 function App() {
   
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />} >
+        <Route path="/" element={<Layout /> } >
           <Route index element={<Home />} />
            <Route path="about" element={<About />} />
            <Route path="/contact" element={<Contact />} />
