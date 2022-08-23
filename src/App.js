@@ -15,8 +15,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" forceRefresh={true} element={<Layout />} >
-          <Route index element={<Home />} />
-           <Route path="about" element={<About />} />
+          <Route index forceRefresh={true} element={<Home />} />
+           <Route forceRefresh={true} path="about" element={<About />} />
            <Route path="/contact" element={<Contact />} />
            <Route path="/portfolio" element={<Portfolio />} />
            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
